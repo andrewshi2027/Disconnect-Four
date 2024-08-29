@@ -149,9 +149,7 @@ int main()
                 for (int j = 0; j < 5; j++)
                 {
                     printf("%c ", board[i][j]);
-                    if (j < COLS - 1) {
-                        printf(" ");
-                    }
+            
                 }
             }
             printf("\n");
