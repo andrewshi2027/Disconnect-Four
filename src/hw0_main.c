@@ -43,18 +43,22 @@ int valid(char arr[ROWS][COLS], int row, int column) {
 
 
 
-int main() {
+int main() 
+{
     char piece;
     int row, column;
 
-    while (1) {
+    while (1) 
+    {
         //Print Board
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 5; i++) 
+        {
             printf("\n");
             for (int j = 0; j < 5; j++) 
             {
                 printf("%c", board[i][j]);
-                if (j < COLS - 1) {
+                if (j < COLS - 1) 
+                {
                     printf(" ");
                 }
             }
@@ -62,82 +66,91 @@ int main() {
         printf("\n");
 
         //User Input for Piece
-        while (1) {
+        while (1) 
+        {
             printf("Choose a piece (x or o) or q to quit: ");
             scanf(" %c", &piece); //need space before %c
-            if (piece == 'x' || piece == 'o' || piece == 'q') {
+            if (piece == 'x' || piece == 'o' || piece == 'q') 
+            {
                 break;
             }
-            else {
+            else 
+            {
                 printf("Invalid choice. ");
             }
         }
+
         // If user chose "q" (quit)
-        if (piece == 'q') {
+        if (piece == 'q') 
+        {
             printf("Quitting the game.");
             return 0;
         }
+
         //User Input for Row
-        while (1) {
+        while (1) 
+        {
             printf("Choose a row (0-4): ");
             scanf("%d", &row);
-            if (row >= 0 && row < ROWS) {
+            if (row >= 0 && row < ROWS) 
+            {
                 break;
             }
-            else {
+            else 
+            {
                 printf("Invalid choice. ");
             }
         }
+
         //User Input for Column
-        while (1) {
+        while (1) 
+        {
             printf("Choose a column (0-4): ");
             scanf("%d", &column);
 
-            if (column >= 0 && column < COLS) {
+            if (column >= 0 && column < COLS) 
+            {
                 break;
             }
-            else {
+            else 
+            {
                 printf("Invalid choice. ");
             }
         }
-        break;
+        
 
         //If Cell is Occupied
         if (valid(board, row, column) == -1) {
             printf("Invalid choice. That space is already occupied.\n");
         }
         else {
-           board[row][column] = piece;
-           break; 
+           board[row][column] = piece; 
         }
 
         if (win(board) == 0) {
-        //Victory
-        printf("Congratulations, you have filled the board!");
-        //Print Winning Board
-        for (int i = 0; i < 5; i++) {
-            printf("\n");
-            for (int j = 0; j < 5; j++) 
-            {
-                printf("%c", board[i][j]);
-                if (j < COLS - 1) {
-                    printf(" ");
+            //Victory
+            printf("Congratulations, you have filled the board!");
+            //Print Winning Board
+            for (int i = 0; i < 5; i++) {
+                printf("\n");
+                for (int j = 0; j < 5; j++) 
+                {
+                    printf("%c", board[i][j]);
+                    if (j < COLS - 1) {
+                        printf(" ");
+                    }
                 }
             }
+            printf("\n");
+            break;
         }
-        printf("\n");
     }
 
-    }
-
-    
-
-
-    
-    
     //If invalid input
     return 0;
 }
+  
+
 
 
 
