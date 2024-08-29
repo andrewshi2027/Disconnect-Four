@@ -5,7 +5,6 @@
 #define ROWS 5
 #define COLS 5
 
-
 char board[ROWS][COLS] = {
     {'x', 'x', 'x', '-', 'o'},
     {'o', 'x', 'x', 'o', 'o'},
@@ -13,11 +12,9 @@ char board[ROWS][COLS] = {
     {'o', '-', 'x', 'x', '-'},
     {'x', 'o', 'x', 'o', 'o'}};
 
-
 /* Hint:
 scanf(" %c", &choice); //this command will erase whitespace in the token selection, solves the double error
 */
-
 
 //FUNCTIONS
 //Checks if board is a winning board
@@ -34,30 +31,19 @@ int win(char arr[ROWS][COLS]) {
     return condition;
 }
 
-
 //Checks if invalid piece choice
 int valid(char arr[ROWS][COLS], int row, int column) {
     int output = 0; //valid
     if (arr[row][column] != '-') { //arr[row][column] == 'o' || arr[row][column] == 'x'
         output = -1; //invalid
     }
-
-
     return output;
 }
-
-
-
-
-
-
-
 
 int main()
 {
     char piece;
     int row, column;
-
 
     while (1)
     {
@@ -70,7 +56,6 @@ int main()
             }
             printf("\n");
         }
-
 
 
         //User Input for Piece
