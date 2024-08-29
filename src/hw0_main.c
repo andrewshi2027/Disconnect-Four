@@ -70,7 +70,7 @@ int main()
             }
             printf("\n");
         }
-        printf("\n");
+
 
 
         //User Input for Piece
